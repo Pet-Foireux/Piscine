@@ -10,32 +10,28 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-char            *ft_strcpy(char *dest, char *src)
-       
-	char *start = dest;
+char	*ft_strcpy(char *dest, char *src)
 {
-	while (*src != '\0'){
-		*dest = *src;
-		dest++;
-		src++;
-	}
-	
-	*dest = '\0';
-	
-	return start;
+	int	i;
 
+	i = 0;
+	while (src[i] != '\0')
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
 }
 
-int main()
-{
-	char src[] = "Bonjour";
-	char dest[10];
+/*int	main() {
+	char source[] = "Bonjour";
+	char destination[20];
 	
-	ft_strcpy(dest, src);
+	ft_strcpy(destination, source);
 	
-	printf("Tiens mon gater tes chaine : %s\n", dest);
+	printf("source : %s\n", source);
+	printf("destination : %s\n", destination);
 	
 	return 0;
-}
+}*/
