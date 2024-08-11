@@ -9,9 +9,9 @@
 /*   Updated: 2024/08/08 14:46:53 by mpapin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+/*
 #include <unistd.h>
-
+*/
 void	ft_putchar(char c)
 {
 	write(1, &c, 1);
@@ -28,3 +28,12 @@ void	ft_putstr(char *str)
 		i++;
 	}
 }
+/*
+int main() 
+{
+	char *str = "Bienvenue dans le monde de Shrek!";
+	ft_putstr(str);
+
+	return 0;
+}
+*/

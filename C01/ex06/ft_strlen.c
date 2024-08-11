@@ -9,7 +9,9 @@
 /*   Updated: 2024/08/08 17:17:37 by mpapin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+/*
+#include <unistd.h>
+*/
 int	ft_strlen(char *str)
 {
 	int	i;
@@ -21,3 +23,12 @@ int	ft_strlen(char *str)
 	}
 	return (i);
 }
+/*
+int	main(void)
+{
+	char	*str = "SHREK SUPPREMATIE";
+	ft_srlen(str);
+
+	return(0);
+}
+*/
