@@ -1,35 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpapin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/08 17:04:31 by mpapin            #+#    #+#             */
-/*   Updated: 2024/08/08 17:17:37 by mpapin           ###   ########.fr       */
+/*   Created: 2024/08/12 14:20:27 by mpapin            #+#    #+#             */
+/*   Updated: 2024/08/12 15:08:07 by mpapin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 /*
 #include <unistd.h>
+
+#include <stdio.h>
 */
-int	ft_strlen(char *str)
+char	*ft_strcat(char *dest, char *src)
 {
 	int	i;
+	int	j;
 
 	i = 0;
-	while (str[i] != '\0')
-	{
+	j = 0;
+	while (dest[i] != '\0')
 		i++;
+	while (src[j] != '\0')
+	{
+		dest[i + j] = src[j];
+		j++;
 	}
-	return (i);
+	dest[i + j] = '\0';
+	return (dest);
 }
-
 /*
 int	main(void)
 {
-	char	*str = "SHREK SUPPREMATIE";
-	ft_srlen(str);
-
+	char dest[] = "shrek";
+	char src[] = " et fiona";
+	printf("%s", ft_strcat(dest, src));
 	return(0);
 }
 */

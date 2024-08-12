@@ -1,35 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpapin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/08 17:04:31 by mpapin            #+#    #+#             */
-/*   Updated: 2024/08/08 17:17:37 by mpapin           ###   ########.fr       */
+/*   Created: 2024/08/12 13:51:08 by mpapin            #+#    #+#             */
+/*   Updated: 2024/08/12 14:18:10 by mpapin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 /*
 #include <unistd.h>
+
+#include <stdio.h>
 */
-int	ft_strlen(char *str)
+
+int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
 	int	i;
+	int	resultat;
 
+	resultat = 0;
 	i = 0;
-	while (str[i] != '\0')
+	while (s1[i] != '\0' && s2[i] != '\0' && i != n)
 	{
+		resultat = s1[i] - s2[i];
+		if (resultat > 0)
+		{
+			return (resultat);
+		}
+		if (resultat < 0)
+		{
+			return (resultat);
+		}
 		i++;
 	}
-	return (i);
+	return (resultat);
 }
-
 /*
 int	main(void)
 {
-	char	*str = "SHREK SUPPREMATIE";
-	ft_srlen(str);
-
+	char	shrek[] = "ss1hrek";
+	char	fiona[] = "ss3fiona";
+	unsigned int n = 3;
+	
+	printf("%d", ft_strncmp(shrek, fiona, n));
 	return(0);
 }
 */
