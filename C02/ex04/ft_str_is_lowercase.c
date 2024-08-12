@@ -11,28 +11,28 @@
 /* ************************************************************************** */
 #include <unistd.h>
 
-/*
 #include <stdio.h>
-*/
 
 int	ft_str_is_lowercase(char *str)
 {
 	int	i;
 
 	i = 0;
+	if (str[0] == '\0')
+		return (1);
 	while (str[i])
 	{
-		if (!(str[i] >= 97 && str[i] <= 122))
-			return (1);
+		if (str[i] < 97 || str[i] > 122)
+			return (0);
 		i++;
 	}
-	return (0);
+	return (1);
 }
 /*
 int main() 
 {
 	char str1[] = "shrek";
-	char str2[] = "FionaEtShrek";
+	char str2[] = "abcAdefghijkl";
 	char str3[] = "l'ane";
 
 	printf("%d\n", ft_str_is_lowercase(str1));
