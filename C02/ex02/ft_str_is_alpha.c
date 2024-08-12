@@ -11,10 +11,10 @@
 /* ************************************************************************** */
 /*
 #include <stdio.h>
-*/
+
 
 #include <unistd.h>
-
+*/
 int	ft_str_is_alpha(char *str)
 {
 	int	i;
@@ -28,7 +28,6 @@ int	ft_str_is_alpha(char *str)
 	}
 	return (1);
 }
-
 /*
 int main()
 {
@@ -44,4 +43,5 @@ int main()
 	printf("str = %s, isalpha = %d\n", str, ft_str_is_alpha(str));
 	str = "|";
 	printf("str = %s, isalpha = %d\n", str, ft_str_is_alpha(str));
-}*/
+}
+*/

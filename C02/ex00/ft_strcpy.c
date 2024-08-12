@@ -30,7 +30,7 @@ char	*ft_strcpy(char *dest, char *src)
 }
 
 /*int	main() {
-	char source[] = "Bonjour";
+	char source[] = "Shrek";
 	char destination[20];
 	
 	ft_strcpy(destination, source);
