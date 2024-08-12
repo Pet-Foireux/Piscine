@@ -12,6 +12,9 @@
 /*
 #include <stdio.h>
 */
+
+#include <unistd.h>
+
 int	ft_str_is_alpha(char *str)
 {
 	int	i;
@@ -35,10 +38,10 @@ int main()
 	printf("str = %s, isalpha = %d\n", str, ft_str_is_alpha(str));
 	str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	printf("str = %s, isalpha = %d\n", str, ft_str_is_alpha(str));
-	str = "@";
+	str = "%";
 	printf("str = %s, isalpha = %d\n", str, ft_str_is_alpha(str));
 	str = "[";
 	printf("str = %s, isalpha = %d\n", str, ft_str_is_alpha(str));
-	str = "{";
+	str = "|";
 	printf("str = %s, isalpha = %d\n", str, ft_str_is_alpha(str));
 }*/

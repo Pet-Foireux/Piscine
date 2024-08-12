@@ -12,7 +12,11 @@
 
 #include <unistd.h>
 
-char    *ft_strupcase(char *str);
+/*
+#include <stdio.h>
+*/
+
+char	*ft_strupcase(char *str)
 {
 	int	i;
 
@@ -24,11 +28,19 @@ char    *ft_strupcase(char *str);
 		i++;
 	}
 	return (str);
-
 }
 
-int main(void)
-
 /*
-fait le main sale chien
+int main(void) 
+{
+	char str1[] = "ShrekFaitLaCuisine";
+	char str2[] = "L'Ane\nSeCache";
+	char str3[] = "ShrekEtFiona";
+
+	printf("%s", ft_strupcase(str1));
+	printf("\n%s", ft_strupcase(str2));
+	printf("\n%s", ft_strupcase(str3));
+
+	return 0;
+}
 */
