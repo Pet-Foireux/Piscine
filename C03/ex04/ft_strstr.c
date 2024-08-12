@@ -17,7 +17,6 @@
 char	*ft_strstr(char *str, char *to_find)
 {
 	int	i;
-	int	j;
 
 	if (*to_find == '\0')
 		return (str);
@@ -26,16 +25,9 @@ char	*ft_strstr(char *str, char *to_find)
 		if (*str == *to_find)
 		{
 			i = 0;
-			j = 0;
-			while (to_find[i] != '\0')
-			{
-				if (str[i] != to_find[i])
-				{
-					j = 1;
-					i++;
-				}
-			}
-			if (j == 0)
+			while (str[i] == to_find[i] && to_find[i] != '\0')
+				i++;
+			if (to_find[i] == '\0')
 				return (str);
 		}
 		str++;
