@@ -12,7 +12,6 @@
 /*
 #include <stdio.h>
 
-
 #include <unistd.h>
 */
 char	*ft_strncpy(char *dest, char *src, unsigned int n)
@@ -35,14 +34,13 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 /*
 int main() 
 {
-	char source[] = "ShrekEtL'Ane";
-	char destination[20];
+	char source[] = "EtShrek";
+	char destination[7];
 	
-	ft_strncpy(destination, source, 5);
+	ft_strncpy(destination, source, 7);
 	printf("Source : %s\n", source);
-	printf("Destination: %s\n", destination);
 	
-	ft_strncpy(destination, "FionaEtShrek", 10);
+	ft_strncpy(destination, "Fiona", 5);
 	printf("Destination: %s\n", destination);
 	
 	return 0;
