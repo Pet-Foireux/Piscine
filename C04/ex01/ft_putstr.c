@@ -1,45 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpapin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/12 16:59:44 by mpapin            #+#    #+#             */
-/*   Updated: 2024/08/13 08:40:48 by mpapin           ###   ########.fr       */
+/*   Created: 2024/08/13 13:23:19 by mpapin            #+#    #+#             */
+/*   Updated: 2024/08/13 13:23:42 by mpapin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
 #include <unistd.h>
 
-char	*ft_strstr(char *str, char *to_find)
+#include <stdio.h>
+
+void	ft_putstr(char *str)
 {
 	int	i;
 
-	if (to_find[i] == '\0')
-		return (0);
+	i = 0;
 	while (str[i] != '\0')
 	{
-		if (str[i] == to_find[0])
-		{
-			i = 0;
-			while (str[i] == to_find[i] && to_find[i] != '\0')
-				i++;
-			if (to_find[i] == '\0')
-				return (str);
-		}
-		str++;
+		write(1, &str[i], 1);
+		i++;
 	}
-	return (0);
 }
 /*
-int	main(void)
+int    main(void)
 {
-	char str[]="shrek et fiona go  couple goal";
-	char to_find[]="go";
-	printf("%s", ft_strstr(str, to_find));
+	char str[] = "Bienvenue dans le monde de Fiona !";
+    
+	ft_putstr(str);
 	return (0);
 }
 */
