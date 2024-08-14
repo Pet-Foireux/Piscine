@@ -35,9 +35,9 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 /*
 int	main(void)
 {
-	char	shrek[] = "ss1hrek";
-	char	fiona[] = "ss3fiona";
-	unsigned int n = 3;
+	char	shrek[] = "ss1";
+	char	fiona[] = "ss2";
+	unsigned int n = 2;
 	
 	printf("%d", ft_strncmp(shrek, fiona, n));
 	return(0);
