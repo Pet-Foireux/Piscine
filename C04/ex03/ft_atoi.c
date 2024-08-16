@@ -1,35 +1,47 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mpapin <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/08/16 10:16:52 by mpapin            #+#    #+#             */
+/*   Updated: 2024/08/16 10:16:58 by mpapin           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 
 #include <stdio.h>
 
 int	ft_atoi(char *str)
 {
-	int	result;
-	int	sign;
+	int	resultat;
+	int	signe;
 	int	i;
 
-	result = 0;
-	sign = 1;
+	resultat = 0;
+	signe = 1;
 	i = 0;
-	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
+	while (str[i] == ' ')
 		i++;
 	while (str[i] == '-' || str[i] == '+')
 	{
 		if (str[i] == '-')
-			sign = -sign;
+			signe = -signe;
 		i++;
 	}
 	while (str[i] >= '0' && str[i] <= '9')
 	{
-		result = result * 10 + (str[i] - '0');
+		resultat = resultat * 10 + (str[i] - '0');
 		i++;
 	}
-	return (sign * result);
+	return (signe * resultat);
 }
 /*
 int	main(void)
 {
-	char	str1[] = "   ---+--+1234ab567";
+	char	str1[] = "   --+++-32145shrek456";
 	printf("%d", ft_atoi(str1));
 	return (0);
 }
