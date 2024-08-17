@@ -9,7 +9,6 @@
 /*   Updated: 2024/08/16 10:19:19 by mpapin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include <stdio.h>
 #include <unistd.h>
 #include <string.h>
@@ -17,20 +16,20 @@
 char	*ft_strstr(char *str, char *to_find)
 {
 	int	i;
+	int	j;
 
+	j = 0;
 	i = 0;
 	if (to_find[i] == '\0')
-		return (to_find);
+		return (str);
 	while (str[i] != '\0')
 	{
-		if (str[i] == to_find[0])
-		{
-			while (str[i] == to_find[i] && to_find[i] != '\0')
-				i++;
-			if (to_find[i] == '\0')
-				return (str);
-		}
-		str++;
+		j = 0;
+		while (str[i + j] == to_find[j] && to_find[j] != '\0')
+			j++;
+		if (to_find[j] == '\0')
+			return (&str[i]);
+		i++;
 	}
 	return (0);
 }
