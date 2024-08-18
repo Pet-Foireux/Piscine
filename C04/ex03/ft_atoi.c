@@ -1,11 +1,11 @@
 #include <unistd.h>
 #include <stdio.h>
 
-int ft_atoi(char *str)
+int	ft_atoi(char *str)
 {
-	int i;
-	int nb;
-	int signe;
+	int	i;
+	int	nb;
+	int	signe;
 
 	i = 0;
 	nb = 0;
