@@ -1,47 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_print_program_name.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpapin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/19 09:28:17 by mpapin            #+#    #+#             */
-/*   Updated: 2024/08/19 09:28:20 by mpapin           ###   ########.fr       */
+/*   Created: 2024/08/19 15:44:21 by mpapin            #+#    #+#             */
+/*   Updated: 2024/08/19 16:27:19 by mpapin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdio.h>
 
-int	ft_atoi(char *str)
+int	main(int argc, char **argv)
 {
 	int	i;
-	int	nb;
-	int	signe;
 
 	i = 0;
-	nb = 0;
-	signe = 1;
-	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
-		i++;
-	while (str[i] == '-' || str[i] == '+')
+	while (argv[0][i] != '\0')
 	{
-		if (str[i] == '-')
-			signe = -signe;
+		write(1, &argv[0][i], 1);
 		i++;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		nb = nb * 10 + (str[i] - '0');
-		i++;
-	}
-	return (nb * signe);
 }
-/*
-int	main(void)
-{
-	char	str1[] = " -++++++------++--123456789shrekkkkkkk";
-	printf("%d", ft_atoi(str1));
-	return (0);
-}
-*/
