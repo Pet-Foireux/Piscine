@@ -30,19 +30,18 @@ void	ft_swap(char **a, char **b)
 	*b = temp;
 }
 
-int	comparateur(char *str)
+int	ft_strcmp(char *s1, char *s2)
 {
 	int	i;
-	int	valeur;
 
 	i = 0;
-	valeur = 0;
-	while (str[i])
+	while (s1[i] != '\0' && s2[i] != '\0')
 	{
-		valeur += str[i];
+		if (s1[i] != s2[i])
+			return (s1[i] - s2[i]);
 		i++;
 	}
-	return (valeur);
+	return (s1[i] - s2[i]);
 }
 
 int	main(int argc, char **argv)
@@ -56,7 +55,7 @@ int	main(int argc, char **argv)
 		j = i + 1;
 		while (j < argc)
 		{
-			if (comparateur(argv[i]) > comparateur(argv[j]))
+			if (ft_strcmp(argv[i], argv[j]) > 0)
 			{
 				ft_swap(&argv[i], &argv[j]);
 			}
