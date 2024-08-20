@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_sort_params.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mpapin <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/08/20 09:18:40 by mpapin            #+#    #+#             */
+/*   Updated: 2024/08/20 09:20:54 by mpapin           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 
 void	ft_putnbr(int nb)
 {
-	char la_valeur;
+	char	la_valeur;
 
 	if (nb > 9)
 	{
@@ -14,19 +26,20 @@ void	ft_putnbr(int nb)
 
 void	ft_swap(char **a, char **b)
 {
-	char *temp = *a;
+	char	temp;
+
+	*temp = *a;
 	*a = *b;
 	*b = temp;
 }
 
 int	comparateur(char *str)
 {
-	int i;
-	int valeur;
+	int	i;
+	int	valeur;
 
 	i = 0;
 	valeur = 0;
-	
 	while (str[i])
 	{
 		valeur += str[i];
@@ -34,11 +47,12 @@ int	comparateur(char *str)
 	}
 	return (valeur);
 }
+
 int	main(int argc, char **argv)
 {
-	int i;
-	int j;
-	
+	int	i;
+	int	j;
+
 	i = 1;
 	while (i < argc)
 	{
@@ -53,7 +67,6 @@ int	main(int argc, char **argv)
 		}
 		i++;
 	}
-
 	i = 1;
 	while (i < argc)
 	{
