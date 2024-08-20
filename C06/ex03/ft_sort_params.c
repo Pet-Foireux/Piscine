@@ -6,7 +6,7 @@
 /*   By: mpapin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 09:18:40 by mpapin            #+#    #+#             */
-/*   Updated: 2024/08/20 09:20:54 by mpapin           ###   ########.fr       */
+/*   Updated: 2024/08/20 09:54:00 by mpapin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_putnbr(int nb)
 
 void	ft_swap(char **a, char **b)
 {
-	char	temp;
+	char	*temp;
 
 	*temp = *a;
 	*a = *b;
