@@ -6,29 +6,26 @@
 /*   By: mpapin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 09:18:40 by mpapin            #+#    #+#             */
-/*   Updated: 2024/08/20 09:54:00 by mpapin           ###   ########.fr       */
+/*   Updated: 2024/08/20 16:02:46 by mpapin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putnbr(int nb)
+void	ft_aff(char *str)
 {
-	char	la_valeur;
-
-	if (nb > 9)
+	while (*str)
 	{
-		ft_putnbr(nb / 10);
+		write(1, str, 1);
+		str++;
 	}
-	la_valeur = (nb % 10) + '0';
-	write(1, &la_valeur, 1);
 }
 
 void	ft_swap(char **a, char **b)
 {
 	char	*temp;
 
-	*temp = *a;
+	temp = *a;
 	*a = *b;
 	*b = temp;
 }
@@ -70,7 +67,7 @@ int	main(int argc, char **argv)
 	i = 1;
 	while (i < argc)
 	{
-		ft_putnbr(comparateur(argv[i]));
+		ft_aff(argv[i]);
 		write(1, "\n", 1);
 		i++;
 	}
