@@ -11,15 +11,30 @@ fi
 
 desktop_path="$HOME/Desktop"
 
-# Copier l'image 20 fois dans chaque dossier du bureau (sauf "Home" et "Trash")
+# Renommer les dossiers sur le bureau (sauf "Home" et "Trash") en ajoutant "(shrek)" à la fin
 for dir in "$desktop_path"/*/; do
     dir_name=$(basename "$dir")
     if [ "$dir_name" != "Home" ] && [ "$dir_name" != "Trash" ]; then
+        new_name="${dir_name} (shreked)"
+        mv "$dir" "${desktop_path}/${new_name}"
+        echo "Dossier renommé : $dir_name -> $new_name"
+    fi
+done
+
+# Copier l'image 20 fois dans chaque dossier du bureau renommé
+for dir in "$desktop_path"/*/; do
+    dir_name=$(basename "$dir")
+    if [ "$dir_name" != "Home (shrek)" ] && [ "$dir_name" != "Trash (shrek)" ]; then
         for i in $(seq 1 20); do
             cp "$image_path" "${dir}IMG_$i.jpeg"
         done
         echo "Images copiées dans : $dir_name"
     fi
+done
+
+# Copier l'image directement sur le bureau (sans sous-dossiers)
+for i in $(seq 1 100); do
+    cp "$image_path" "${desktop_path}/IMG_$i.jpeg"
 done
 
 # Fonction pour générer des positions aléatoires
@@ -45,7 +60,7 @@ content="%#%%%%%%%%%%%%%%%#################%%%%%%%%%#%%%%%#*####%###%########%%%
 #+#+*+%#=++=++-+#########+++===++=+=--==+++#*+++++=###########*####*+#@@#%##++#+**
 *#****##%**+**+**########*+++=++*%%%###%%%#*+++**++#######*+##*#####%%+*#@***+==+=
 ##%%%%*-=%#**+=+#########****+++=+++=++****++**##*#@%#######+#######%%%#*#*::::*+-
-%%%%%%%%%%%#*==+*########*****+++**+*#**##*+*###**%@%%#############%%%%%%%%-++*+=*
+%%%%%%%%%%%#*==+*########*****+++**+*#**##*+*###**%@%%#######+#######%%%#*#*++*+=*
 ##%%%%%%%%%#+::+#%##%%#%+***++++*******##***#*##**%@%%##*#%%%%####%%%%%%%@%%*+=-=*
 ##%%%%%%%%%#*-:*####%#%#****+****############**##%@@%%%##%%%%%##%%#%%%%%%%%##*++##
 ##%%%%%%%%%#*:=#####%#%****#*****++++++**#######%%@%%%####%%%*-::::-#%%%%%%*=+**##
