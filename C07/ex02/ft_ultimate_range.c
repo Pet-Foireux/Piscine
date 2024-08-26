@@ -34,7 +34,7 @@ int	ft_ultimate_range(int **range, int min, int max)
 	}
 	return (i);
 }
-
+/*
 int	main(void)
 {
 	int	*arr;
@@ -51,3 +51,4 @@ int	main(void)
 	free(arr);
 	return (0);
 }
+*/
