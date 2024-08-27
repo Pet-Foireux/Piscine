@@ -5,10 +5,13 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpapin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/26 10:36:34 by mpapin            #+#    #+#             */
-/*   Updated: 2024/08/26 10:36:36 by mpapin           ###   ########.fr       */
+/*   Created: 2024/08/22 12:40:10 by mpapin            #+#    #+#             */
+/*   Updated: 2024/08/27 14:57:36 by mpapin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdlib.h>
+#include <stdio.h>
 
 #include <stdlib.h>
 #include <stdio.h>
