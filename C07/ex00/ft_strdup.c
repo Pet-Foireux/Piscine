@@ -6,7 +6,7 @@
 /*   By: mpapin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 10:45:07 by mpapin            #+#    #+#             */
-/*   Updated: 2024/08/26 12:03:37 by mpapin           ###   ########.fr       */
+/*   Updated: 2024/08/27 18:48:57 by mpapin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,9 @@ char	*ft_strdup(char *src)
 	}
 	return (result);
 }
-/*
+
 int	main()
 {
 	printf("%s\n", ft_strdup("Shrek"));
 	return 0;
 }
-*/
