@@ -10,22 +10,10 @@ elif [[ "$1" =~ ^top ]]; then
 fi
 
 /sgoinfre/goinfre/Perso/nlaerema/tools/kdo_init
-ACCESS_TOKEN=$(/sgoinfre/goinfre/Perso/nlaerema/tools/kdo_key)
-
-DATA_1=$(curl -s -G -H "Authorization: Bearer $ACCESS_TOKEN" \
-	--data-urlencode "page[size]=100" \
-	--data-urlencode "filter[campus_id]=62" \
-	--data-urlencode "range[created_at]=2024-08-01T06:00:00.000Z, 2024-08-05T11:00:00.000Z" \
-	"https://api.intra.42.fr/v2/cursus_users")
-
-DATA_2=$(curl -s -G -H "Authorization: Bearer $ACCESS_TOKEN" \
-        --data-urlencode "page[size]=100" \
-        --data-urlencode "filter[campus_id]=62" \
-        --data-urlencode "page[number]=2" \
-        --data-urlencode "range[created_at]=2024-08-01T06:00:00.000Z, 2024-08-05T11:00:00.000Z" \
-        "https://api.intra.42.fr/v2/cursus_users")
-
+DATA_1=$(/sgoinfre/goinfre/Perso/nlaerema/tools/kdo_api /v2/cursus_users "page[size]=100" "filter[campus_id]=62" "range[created_at]=2024-08-01T06:00:00.000Z, 2024-08-05T11:00:00.000Z")
+DATA_2=$(/sgoinfre/goinfre/Perso/nlaerema/tools/kdo_api /v2/cursus_users "page[size]=100" "page[number]=2" "filter[campus_id]=62" "range[created_at]=2024-08-01T06:00:00.000Z, 2024-08-05T11:00:00.000Z")
 DATA=$(echo "$DATA_1 $DATA_2" | jq -s '.[0] + .[1]' | jq 'sort_by(.level) | reverse')
+
 PROCESS=$(echo "$DATA" | jq -r '.[] | "&\(.user.login)&\(.level)"' | cat -n)
 LEADERBOARD=""
 FOUND=false

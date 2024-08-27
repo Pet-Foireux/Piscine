@@ -6,7 +6,7 @@
 /*   By: mpapin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 14:45:50 by mpapin            #+#    #+#             */
-/*   Updated: 2024/08/08 16:45:32 by mpapin           ###   ########.fr       */
+/*   Updated: 2024/08/26 12:46:48 by mpapin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ void	ft_putstr(char *str)
 /*
 int    main(void)
 {
-	char str[] = "Bienvenue dans le monde de Shrek!";
-    
+	char str[] = "Bienvenue dans le monde de Shrek!"
 	ft_putstr(str);
+	printf("%d", ft_putstr(str));
 	return (0);
 }
 */

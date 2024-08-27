@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_program_name.c                            :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpapin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/21 17:44:31 by mpapin            #+#    #+#             */
-/*   Updated: 2024/08/21 18:18:24 by mpapin           ###   ########.fr       */
+/*   Created: 2024/08/26 15:35:51 by mpapin            #+#    #+#             */
+/*   Updated: 2024/08/26 15:51:52 by mpapin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-int	main(int argc, char **argv)
+char **ft_split(char *str, char *charset)
 {
-	int	i;
-	int	j;
+    int i;
+    int j;
+    char resultat; 
 
-	i = argc - 1;
-	j = 0;
-	while (i > 0)
-	{
-		j = 0;
-		while (argv[i][j])
-		{
-			write(1, &argv[i][j], 1);
-			j++;
-		}
-		i -= 2;
-		write(1, "\n", 1);
-	}
+    i = 0;
+    j = 0;
+    resultat = 0;
+
 }
+
+
+char **test = {"Bonjour", "le", "monde"};
+printf("%s", test[0]);
