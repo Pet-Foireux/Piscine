@@ -30,17 +30,22 @@ char	*ft_strdup(char *src)
 	int		i;
 
 	i = 0;
+	if (src == NULL)
+		return (NULL);
 	result = (char *)(malloc(sizeof(char) * ft_strlen(src)));
+	if (result == NULL)
+		return (NULL);
 	while (src[i])
 	{
 		result[i] = src[i];
 		i++;
 	}
+	result[i] = 0;
 	return (result);
 }
 
-int	main()
-{
-	printf("%s\n", ft_strdup("Shrek"));
-	return 0;
-}
+// int	main()
+// {
+// 	printf("%s\n", ft_strdup("Shrek"));
+// 	return 0;
+// }

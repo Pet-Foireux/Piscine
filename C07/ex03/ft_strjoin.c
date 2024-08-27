@@ -11,90 +11,92 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stdio.h>
 
-int	get_size(char **strs, int size, char *sep)
+int	ft_strlen(char *str)
 {
 	int	i;
-	int	j;
-	int	total;
 
 	i = 0;
-	j = 0;
+	while (str[i])
+		i++;
+	return (i);
+}
+
+char	*ft_strcat(char *dest, char *src)
+{
+	int	c;
+	int	d;
+
+	c = 0;
+	d = 0;
+	while (dest[c] != '\0')
+		c++;
+	while (src[d] != '\0')
+	{
+		dest[c] = src[d];
+		c++;
+		d++;
+	}
+	dest[c] = '\0';
+	return (dest);
+}
+
+int	calc_total(int size, char **strs, char *sep)
+{
+	int	total;
+	int	i;
+
 	total = 0;
+	i = 0;
 	while (i < size)
 	{
-		while (strs[i][j])
-		{
-			total++;
-			j++;
-		}
-		j = 0;
+		total += ft_strlen(strs[i]);
 		i++;
 	}
-	i = 0;
-	while (sep[i])
-		i++;
-	return (total + (i * total));
-}
-
-void	mettre_a_zero(int *i, int *j, int *k)
-{
-	*i = 0;
-	*j = 0;
-	*k = 0;
-}
-
-void	mettre_sep(char *sep, char *res, int *k)
-{
-	int	j;
-
-	j = 0;
-	while (sep[j])
-	{
-		res[*k] = sep[j];
-		j++;
-		(*k)++;
-	}
+	total += ft_strlen(sep) * (size - 1);
+	return (total);
 }
 
 char	*ft_strjoin(int size, char **strs, char *sep)
 {
-	char	*res;
+	char	*resultat;
+	int		total;
 	int		i;
-	int		j;
-	int		k;
 
-	if (size <= 0)
-		res = "";
-	res = (char *) malloc(get_size(strs, size, sep) * sizeof(char));
-	mettre_a_zero(&i, &j, &k);
-	while (i < size && size > 0)
+	if (size == 0)
 	{
-		while (strs[i][j])
-		{
-			res[k] = strs[i][j];
-			j++;
-			k++;
-		}
+		resultat = malloc(sizeof(char));
+		resultat[0] = '\0';
+		return (resultat);
+	}
+	total = calc_total(size, strs, sep);
+	resultat = malloc(sizeof(char) * (total + 1));
+	if (resultat == NULL)
+		return (NULL);
+	i = 0;
+	resultat[0] = '\0';
+	while (i < size)
+	{
+		ft_strcat(resultat, strs[i]);
 		if (i < size - 1)
-			mettre_sep(sep, res, &k);
-		j = 0;
+			ft_strcat(resultat, sep);
 		i++;
 	}
-	return (res);
+	return (resultat);
 }
+
 /*
-int    main(void)
+#include <stdio.h>
+
+int main(void)
 {
-	char    *strs[] = {"salut c'est", "J'aime les Zhommes"};
-	char    *sep = " shrek. ";
-	char    *res;
+	char *strs[4] = {"shrek est un", "Il est beau et sens bon comme tous les"};
+	char *sep = "ogres.";
+	char *resultat;
 
-	res = ft_strjoin(2, strs, sep);
-	printf("%s", res);
-	free(res);          
-
+	ret = ft_strjoin(4, strs, sep);
+	printf("%s\n", resultat);
+	free(resultat);
 	return (0);
 }
 */

@@ -15,37 +15,37 @@
 
 int	*ft_range(int min, int max)
 {
-	int	*arr;
+	int	*resultat;
 	int	i;
 
+	i = 0;
+	resultat = malloc(sizeof(int) * (max - min));
 	if (min >= max)
 		return (NULL);
-	arr = malloc(sizeof(int) * (max - min));
-	if (arr == NULL)
+	if (resultat == NULL)
 		return (NULL);
-	i = 1;
 	while (min < max)
 	{
-		arr[i] = min;
+		resultat[i] = min;
 		min++;
 		i++;
 	}
-	return (arr);
+	return (resultat);
 }
 /*
 int	main(void)
 {
-	int	*arr;
+	int	*resultat;
 	int	i;
 
-	arr = ft_range(1, 50);
+	resultat = ft_range(1, 50);
 	i = 1;
 	while (i < 50)
 	{
-		printf("%d\n", arr[i]);
+		printf("%d\n", resultat[i]);
 		i++;
 	}
-	free(arr);
+	free(resultat);
 	return (0);
 }
 */
