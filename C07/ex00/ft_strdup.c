@@ -6,7 +6,7 @@
 /*   By: mpapin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 10:45:07 by mpapin            #+#    #+#             */
-/*   Updated: 2024/08/27 18:48:57 by mpapin           ###   ########.fr       */
+/*   Updated: 2024/08/28 13:59:27 by mpapin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,12 +40,12 @@ char	*ft_strdup(char *src)
 		result[i] = src[i];
 		i++;
 	}
-	result[i] = 0;
+	result[i] = '\0';
 	return (result);
 }
 
 // int	main()
 // {
-// 	printf("%s\n", ft_strdup("Shrek"));
+// 	printf("%s\n", ft_strdup("Shreked"));
 // 	return 0;
 // }

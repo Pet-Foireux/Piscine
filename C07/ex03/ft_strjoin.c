@@ -6,7 +6,7 @@
 /*   By: mpapin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 10:04:07 by mpapin            #+#    #+#             */
-/*   Updated: 2024/08/27 14:43:05 by mpapin           ###   ########.fr       */
+/*   Updated: 2024/08/28 09:23:09 by mpapin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 
 int main(void)
 {
-	char *strs[4] = {"shrek est un", "Il est beau et sens bon comme tous les"};
+	char *strs[4] = {"shrek est un", "Il est beau et sens bon"};
 	char *sep = "ogres.";
 	char *resultat;
 
