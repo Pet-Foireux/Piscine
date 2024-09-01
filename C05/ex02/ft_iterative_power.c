@@ -29,15 +29,14 @@ int	ft_iterative_power(int nb, int power)
 	}
 	return (resultat);
 }
-/*
+
 int	 main(void)
 {
 	int nb;
 	int power;
 
-	nb = 2;
-	power = 3;
+	nb = 12;
+	power = 4;
 	printf("%d", ft_iterative_power(nb, power));
 	return (0);
 }
-*/
