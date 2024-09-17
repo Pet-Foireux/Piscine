@@ -6,7 +6,7 @@
 /*   By: mpapin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 10:18:33 by mpapin            #+#    #+#             */
-/*   Updated: 2024/08/19 10:18:35 by mpapin           ###   ########.fr       */
+/*   Updated: 2024/09/17 15:14:06 by mpapin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,10 @@ int	ft_iterative_power(int nb, int power)
 	return (resultat);
 }
 
-int	 main(void)
+int	main(void)
 {
-	int nb;
-	int power;
+	int	nb;
+	int	power;
 
 	nb = 12;
 	power = 4;
